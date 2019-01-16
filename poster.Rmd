@@ -33,7 +33,7 @@ EHRs contain vast quantities of information for individual patients. One useful 
 Developed at Vanderbilt, a popular method for linking genotype's with phenotypes is the Phenome-Wide Association Study (PheWAS). PheWAS uses EHR data to produce a list of phenotypes significantly associated with a pre-specified genotype.
 
 
-### App Screenshot {.no-padding}
+### App usage {.no-padding}
 
 
 <!-- <video autosize: true controls> -->
