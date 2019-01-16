@@ -35,7 +35,11 @@ Developed at Vanderbilt, a popular method for linking genotype's with phenotypes
 
 ### App Screenshot {.no-padding}
 
-![](app_screenshot.png)
+
+<!-- <video autosize: true controls> -->
+<!--   <source src="me_usage.mov" type="video/mp4"> -->
+<!-- </video> -->
+![](me_usage.gif)
 
 
 ### What problems are solved?
