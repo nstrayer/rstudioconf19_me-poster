@@ -13,6 +13,10 @@ const edge_opacity = options.just_snp ? 0.2: 0.07;
 
 drawViz();
 
+setInterval(function(){
+  drawViz();
+
+}, 10000);
 
 
 function drawViz() {
