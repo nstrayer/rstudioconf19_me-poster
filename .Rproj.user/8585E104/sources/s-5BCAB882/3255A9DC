@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1547571480011.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3255A9DC",
+    "lastKnownWriteTime" : 1547607325,
+    "last_content_update" : 1547607325764,
+    "path" : "~/research/rstudio_conf_poster/poster.Rmd",
+    "project_path" : "poster.Rmd",
+    "properties" : {
+        "cursorPosition" : "36,0",
+        "scrollLine" : "31",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

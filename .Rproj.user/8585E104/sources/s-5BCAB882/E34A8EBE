@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1547574090583.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3828751334",
+    "id" : "E34A8EBE",
+    "lastKnownWriteTime" : 1547606761,
+    "last_content_update" : 1547606761722,
+    "path" : "~/research/rstudio_conf_poster/styles.css",
+    "project_path" : "styles.css",
+    "properties" : {
+        "cursorPosition" : "2,16",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "css"
+}
