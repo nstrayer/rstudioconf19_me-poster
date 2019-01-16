@@ -4,7 +4,8 @@ output:
   flexdashboard::flex_dashboard:
     theme: yeti
     css: styles.css
-
+    navbar:
+      - { title: "<i class='fab  fa-github-alt '></i> Code for this poster", href: "https://github.com/nstrayer/rstudioconf19_me-poster", align: right }
 ---
 
 
