@@ -1,10 +1,10 @@
-body {
-  font-family: 'optima';
-  font-size: 1.6em;
-}
 
 #acknowledgements .chart-title {
   display: none;
+}
+
+#shiny-modules .image-container {
+  top: 60px;
 }
 
 h4 {

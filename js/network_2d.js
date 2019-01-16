@@ -11,6 +11,12 @@ const case_opacity = 1;
 const edge_color = '#aaa';
 const edge_opacity = options.just_snp ? 0.2: 0.07;
 
+drawViz();
+
+
+
+function drawViz() {
+
 // for some reason the canvas width and height sometimes are out of sync with the passed width and height variables. 
 
 div.html('');
@@ -261,4 +267,6 @@ function ticked() {
   });
   
   context.restore();
+}
+
 }

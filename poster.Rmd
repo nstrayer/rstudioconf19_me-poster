@@ -5,6 +5,14 @@ output:
     css: styles.css
 ---
 
+
+<style>
+body {
+  font-family: 'optima';
+  font-size: 1.3em;
+}
+</style>
+
 Introduction {data-orientation=rows}
 =====================================  
    
@@ -16,7 +24,7 @@ Row {data-height=800}
    
 As electronic health records (**EHR**) and **biobanks** have grown in popularity, so has the amount of data available to **discover relationships between a patient's genotype and phenotype**.
 
-#### Individual-Level Data
+#### Individual-Level data
 
 EHRs contain vast quantities of information for individual patients. One useful set of information is ICD9 and ICD10 codes. These are used to keep track of billable actions. The **PheCode** is a mapping of ICD codes to **phenotype** (or patient conditions) for research purposes. E.g. Phecode 360.2: Progressive Myopia. Additionally, biobanks provide data on a patient's biomarkers such as genetic mutations or their **genotype**.
 
@@ -25,54 +33,30 @@ EHRs contain vast quantities of information for individual patients. One useful 
 Developed at Vanderbilt, a popular method for linking genotype's with phenotypes is the Phenome-Wide Association Study (PheWAS). PheWAS uses EHR data to produce a list of phenotypes significantly associated with a pre-specified genotype.
 
 
-### What Problem is Solved?
+### App Screenshot {.no-padding}
+
+![](app_screenshot.png)
+
+
+### What problems are solved?
     
-#### Interact with results 
-PheWAS results are typically delivered with static plots and tables. ME allows researchers to instantly explore the results, digging into to the tables and looking for driving patterns.
+#### Interacting with results 
+PheWAS results are typically delivered with static plots and tables. ME allows researchers to instantly explore the results, digging in and looking for driving patterns.
 
 #### Expanding past plain associations
 
 PheWAS results look at a genotype's association with a given phenotype one phenotype at a time. By giving researcher's the ability to look at the network behavior of genotype-phenotype associations, ME allows for more nuanced insights from data than a single P-Value can provide. 
      
+#### Current deployments
+- Exploring more nuanced Heart Failure phenotypes.
+- Drug repurposing
+- Rare-disease detection
 
-
-
-### App Screenshot {.no-padding}
-
-![](app_screenshot.png)
 
  
-
-### Technologies & Packages Used
-
-#### `r icon::fa('keyboard')` Development 
-
-All coding done in **RStudio Server Pro** hosted on **AWS Ec2**. The app is a **Shiny** app in dashboard format thanks to **Shinydashboard**. Custom interactive plots are all build with **d3.js** and called from R using **R2D3**. 
-
-#### `r icon::fa('database')` Data Management
-
-Data for the app managed using **Hive** running on **AWS Athena**. The larger-than-memory datasets stored in **Apache Parquet** files for efficient queries. 
-
-
-#### `r icon::fa('truck')` Deployment
-
-Completed apps are most frequently hosted on **RStudio Connect** server. Occasionally apps are run locally using **Docker** containers for speed and security reasons.
-
-
-  
-
-  
-
-Row {data-height=800}
--------------------------------------
-      
-
-  
-### Shiny Modules  
-
-
-### Interactivity Driven by R2D3
+### Interactivity driven by R2D3
     
+All plots are custom-built interactive javascript visualizations made with the help of the package r2d3. 
 
 ```{r, cached = TRUE}
 network_data <- readr::read_rds('data/sample_network_data.rds')
@@ -93,27 +77,62 @@ r2d3::r2d3(
     
 
 
+  
 
-### Availability
+Row {data-height=800}
+-------------------------------------
+      
+
+  
+### Shiny modules  
+
+Due to the need to build custom versions of ME with different visualization types a helper package **meToolkit()** with shiny modules was built. Standardized input and output allow easy swapping and testing. 
+
+![](module_explainer.png)
+
+
+### Technologies & packages used
+
+#### `r icon::fa('keyboard')` Development 
+
+All coding done in **RStudio Server Pro** hosted on **AWS EC2**. The app is a **Shiny** app in dashboard format thanks to **Shinydashboard**. Custom interactive plots are all build with **d3.js** and called from R using **R2D3**. 
+
+#### `r icon::fa('database')` Data Management
+
+Data for the app managed using **Hive** running on **AWS Athena**. The larger-than-memory datasets stored in **Apache Parquet** files for efficient queries. 
+
+
+
+#### `r icon::fa('truck')` Deployment
+
+Completed apps are most frequently hosted on **RStudio Connect** server. Occasionally apps are run locally using **Docker** containers for speed and security reasons.
+
+
+
+### About
     
-#### Main App 
+#### Me (Nick Strayer):
+- 4th year PhD candidate in Biostatistics at Vanderbilt University
+- Previously at New York Times and Johns Hopkins Data Science Lab
+- [nickstrayer.me](nickstrayer.me), `r icon::fa('twitter')` @nicholasstrayer,  `r icon::fa('github-alt')` nstrayer, [livefreeordichotomize.com](livefreeordichotomize.com)
 
-Full application with data-input landing page for running with your own data. 
+#### TBILab (Translational Bioinformatics Lab) 
+- Focused on using modern data mining and machine learning techniques to help unveal valuable clinical information in messy EHR and biobank data. 
+- PI: Yaomin Xu, Professor Biostatistics and Bioinformatics.
 
-- MIT licenced
-- [`r icon::fa('github-alt')` tbilab/multimorbidity_explorer](https://github.com/tbilab/multimorbidity_explorer)
+#### Software
 
-#### meToolkit package
+- **[`r icon::fa('github-alt')` tbilab/multimorbidity_explorer](https://github.com/tbilab/multimorbidity_explorer)**
+    - Full application with data-input landing page for running with your own data. 
+    - MIT licenced
 
-Lab package with individual componenets of main-app available as shiny modules. 
+- **[`r icon::fa('github-alt')` tbilab/meToolkit](https://github.com/tbilab/meToolkit)**
+    - Package with individual componenets of main-app available as shiny modules.
+    - R Package built with **devtools** and **usethis**
 
-- MIT licenced
-- R Package built with **devtools** and **usethis**
-- Tested with **testthat**
-- Documented with **roxygen**
-- [`r icon::fa('github-alt')` tbilab/meToolkit](https://github.com/tbilab/meToolkit)
-    
-    
+- **[`r icon::fa('github-alt')` tbilab/me_docker](https://github.com/tbilab/me_docker)**
+    - Docker image for deploying ME applications.
+
     
 
 Row {data-height=100}
@@ -148,35 +167,3 @@ Row {data-height=400}
 ```{r}
 ```
 
-
-
-
-
-
-
-
-
-
-Lessons Learned {data-orientation=rows}
-=====================================     
-   
-Row {data-height=600}
--------------------------------------
-
-### Chart 1
-
-```{r}
-```
-
-Row {data-height=400}
--------------------------------------
-   
-### Chart 2
-
-```{r}
-```   
-    
-### Chart 3
-
-```{r}
-```
